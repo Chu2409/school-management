@@ -1,0 +1,10 @@
+# Ignorar carpetas generadas por NetBeans/Ant
+/build/
+/dist/
+/nbproject/private/
+
+# Ignorar archivos temporales o de configuración local
+*.class
+*.log
+*.tmp
+*.cache

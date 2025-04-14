@@ -5,8 +5,8 @@ import java.sql.*;
 public class Conexion {
 
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/plataforma_uta?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-    private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "root";
+    private static final String JDBC_USER = "uta_user";
+    private static final String JDBC_PASSWORD = "uta_password";
 
     public static Connection connect() {        
         Connection connection = null;

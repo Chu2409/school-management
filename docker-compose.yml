@@ -1,0 +1,25 @@
+services:
+  mysql_db:
+    image: mysql:8.0
+    container_name: plataforma_uta_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: plataforma_uta
+      MYSQL_USER: uta_user
+      MYSQL_PASSWORD: uta_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_unicode_ci',
+      '--default-authentication-plugin=mysql_native_password',
+      '--max_connections=200',
+      '--ssl=0',  # Equivalente a useSSL=false
+      '--default-time-zone=+00:00'  # Para serverTimezone=UTC
+    ]
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
